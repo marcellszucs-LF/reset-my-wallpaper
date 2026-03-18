@@ -1,0 +1,28 @@
+{
+  "name": "Wallpaperchanger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --mac"
+  },
+  "build": {
+    "appId": "com.wallpaperchanger",
+    "productName": "Reset my Wallpaper",
+    "mac": {
+      "icon": "icon.icns",
+      "category": "public.app-category.utilities",
+      "target": "dir"
+    },
+    "files": ["index.js", "monitor.svg", "icon.icns", "icon.png"]
+  },
+  "private": true,
+  "devDependencies": {
+    "electron": "^41.0.3",
+    "electron-builder": "^26.8.1"
+  },
+  "dependencies": {
+    "sharp": "^0.34.5"
+  }
+}
