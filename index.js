@@ -145,7 +145,6 @@ app.whenReady().then(async () => {
       checked: isLoginItemEnabled(),
       click: (item) => {
         item.checked ? enableLoginItem() : disableLoginItem()
-        tray.setContextMenu(buildMenu())
       },
     },
     { type: 'separator' },
@@ -155,5 +154,5 @@ app.whenReady().then(async () => {
   ])
 
   tray.on('click', changeWallpaper)
-  tray.setContextMenu(buildMenu())
+  tray.on('right-click', () => tray.popUpContextMenu(buildMenu()))
 })
